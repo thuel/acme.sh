@@ -1,4 +1,11 @@
 #!/usr/bin/env sh
+# source the ansible module parameters
+. $1
+# check mutually exclusive parameters
+
+# type check the parameters?
+
+# map parameters to script arguments
 
 VER=3.0.7
 
@@ -6834,7 +6841,7 @@ setnotify() {
 
 }
 
-showhelp() {
+showhelp() { # refactor this method to return info about module usage
   _initpath
   version
   echo "Usage: $PROJECT_ENTRY <command> ... [parameters ...]
@@ -7969,4 +7976,4 @@ main() {
   if _startswith "$1" '-'; then _process "$@"; else "$@"; fi
 }
 
-main "$@"
+main "$@" # run the module with all parameters passed
